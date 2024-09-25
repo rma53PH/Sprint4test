@@ -4,8 +4,8 @@ import time
 
 st.header('Tossing a Coin')
 
-
-number_of_trials = st.slider('Number of trials?', 1, 1000, 10)
+# Unique key for the first slider
+number_of_trials = st.slider('Number of trials?', 1, 1000, 10, key="slider_1")
 start_button = st.button('Run')
 
 if start_button:
@@ -14,7 +14,6 @@ if start_button:
 chart = st.line_chart([0.5])
 
 def toss_coin(n):
-
     trial_outcomes = scipy.stats.bernoulli.rvs(p=0.5, size=n)
 
     mean = None
@@ -22,7 +21,7 @@ def toss_coin(n):
     outcome_1_count = 0
 
     for r in trial_outcomes:
-        outcome_no +=1
+        outcome_no += 1
         if r == 1:
             outcome_1_count += 1
         mean = outcome_1_count / outcome_no
@@ -31,8 +30,9 @@ def toss_coin(n):
 
     return mean
 
-number_of_trials = st.slider('Number of trials?', 1, 1000, 10)
-start_button = st.button('Run')
+# Unique key for the second slider (optional, you can remove if redundant)
+number_of_trials = st.slider('Number of trials?', 1, 1000, 10, key="slider_2")
+start_button = st.button('Run', key="start_button_2")
 
 if start_button:
-    st.write(f'Running the experient of {number_of_trials} trials.')
+    st.write(f'Running the experiment of {number_of_trials} trials.')
