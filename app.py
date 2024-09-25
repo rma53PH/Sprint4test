@@ -30,9 +30,5 @@ def toss_coin(n):
 
     return mean
 
-# Unique key for the second slider (optional, you can remove if redundant)
-number_of_trials = st.slider('Number of trials?', 1, 1000, 10, key="slider_2")
-start_button = st.button('Run', key="start_button_2")
-
 if start_button:
     st.write(f'Running the experiment of {number_of_trials} trials.')
