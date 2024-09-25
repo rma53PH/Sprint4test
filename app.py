@@ -32,3 +32,4 @@ def toss_coin(n):
 
 if start_button:
     st.write(f'Running the experiment of {number_of_trials} trials.')
+    mean = toss_coin(number_of_trials)
