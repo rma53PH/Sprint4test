@@ -1,19 +1,23 @@
 def get_age_group(age):
-
     """
-    Returns the age group based on age in years within the interval 0..150
-    otherwise returns 'unknown'.
+    Returns the age group based on age in years within the interval 0..150.
+    Otherwise returns 'unknown'.
     """
 
     if 0 <= age <= 14:
         return 'children'
-        # complete this function so that it passes the unit test
-         return 'unknown'
+    elif 15 <= age <= 24:
+        return 'youth'
+    elif 25 <= age <= 64:
+        return 'adults'
+    elif 65 <= age < 150:
+        return 'seniors'
+    else:
+        return 'unknown'
 
+# Unit test
 def test_get_age_group():
-
-    """unit test for get_age_group"""
-
+    """Unit test for get_age_group"""
     assert get_age_group(-1) == 'unknown'
     assert get_age_group(0) == 'children'
     assert get_age_group(14) == 'children'
